@@ -1,55 +1,65 @@
+# Lung Cancer Early Prediction using Machine Learning
 
-# NASA Turbofan Engine RUL Prediction
+## Project Overview
 
-This project uses predictive lung cancer using the lun cancner dataset.
+This repository contains an end-to-end MSc Data Science project
+developed for the module 7PAM2002 at the Department of Physics,
+Astronomy and Mathematics, University of Hertfordshire. The project
+builds non-invasive machine learning models for early lung cancer
+prediction using routinely collected tabular patient data rather than
+imaging.
 
-## 📂 Project Structure
+## Research Aim
 
-- **Data Source**: https://archive.ics.uci.edu/dataset/62/lung+cancer
-- **File**: `lung_code.ipynb` (Google Colab Notebook)
+To design and evaluate supervised machine learning models capable of
+predicting lung cancer in its initial stages while minimising false
+negatives, a critical requirement in healthcare diagnostics.
 
-## 📌 Key Features
+## Dataset
 
-- Data loading and preprocessing from multiple file types
-- Feature engineering to compute RUL
-- Exploratory Data Analysis (EDA) with visualizations
-- Model training using:
-  - Logistic Regression
-  - Random Forest
-  - Decision Trees
-  - SVM
-- Model evaluation using Accuracy, Precision, Recall F1 Score
-- Hyperparameter tuning with RandomizedSearchCV
-- Feature importance analysis for tree-based models
+-   Source: Kaggle Lung Cancer Prediction Dataset\
+-   Records: 5,000 patients\
+-   Features: 18 demographic, lifestyle, and clinical symptom variables\
+-   Fully anonymised secondary dataset\
+-   No human participants were used
 
+## Methodology Pipeline
 
-## 🚀 Getting Started
+1.  Exploratory Data Analysis (EDA)\
+2.  Data Cleaning & Handling Missing Values\
+3.  Categorical Encoding\
+4.  Feature Scaling and Normalisation\
+5.  Train--Test Split\
+6.  Supervised Model Development\
+7.  Evaluation using Accuracy, Precision, Recall, F1-score and Confusion
+    Matrices
 
-### Prerequisites
+## Implemented Models
 
-- Python 3.x
-- `pandas`, `numpy`, `matplotlib`, `seaborn`
-- `scikit-learn`
+-   Logistic Regression (Baseline)\
+-   Decision Tree\
+-   Support Vector Machine (RBF Kernel)\
+-   Random Forest
 
-### Running the Notebook
+## Key Results
 
-1. Upload the dataset folder `CMaps` containing:
-   - `lung_cancer.csv'
+  Model                 Accuracy     Precision    Recall       F1-Score
+  --------------------- ------------ ------------ ------------ ------------
+  Logistic Regression   \~0.77       \~0.67       \~0.70       \~0.69
+  Decision Tree         \~0.78       **\~0.70**   \~0.75       \~0.73
+  SVM (RBF)             \~0.74       \~0.62       \~0.70       \~0.65
+  Random Forest         **\~0.80**   \~0.69       **\~0.88**   **\~0.77**
 
-2. Open `lung_code.ipynb` in Colab or Jupyter.
+Random Forest demonstrated the most reliable overall performance due to
+its ensemble structure, capturing non-linear relationships and reducing
+false negative predictions.
 
-3. Run all cells.
+## Ethics Statement
 
-
-
-## 📈 License
-
-This project is for academic and research purposes only.
-
-## 📬 Contact
-
-For any inquiries, please open an issue or reach out via GitHub.
-
----
+-   Public secondary dataset only\
+-   No personal identifiers\
+-   No intervention with human participants\
+-   Full adherence to University of Hertfordshire academic integrity
+    standards
 
 
